@@ -16,11 +16,12 @@ let sum=()=>{
     alert("The result is: " + a);
     document.getElementById('result').textContent = "The sum of multiples of 3 or 5 up to "+ b +" is: " + a;
 }
-const a=document.getElementById('an').value;
-const b=document.getElementById('bn').value;
-const n=document.getElementById('in3').value;
+
 function sum3() {
     let d = 0;
+    const a=document.getElementById('an').value;
+    const b=document.getElementById('bn').value;
+    const n=document.getElementById('in3').value;
     for (let i = 1; i < n; i++) {
         if (i % a === 0 || i % b === 0) {
             d += i;
