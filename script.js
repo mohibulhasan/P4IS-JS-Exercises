@@ -56,7 +56,7 @@ function sum4_1(){
     const a=document.getElementById('a41').value;
     const b=document.getElementById('b41').value;
     const n = document.getElementById('c4').value;
-    for (let i=0;i<n;i++){
+    for (let i=1;i<n;i++){
       if ((n[i]%a===0 || n[i]%b===0)){
         console.log(n[i]);
         d+=n[i];
@@ -65,9 +65,9 @@ function sum4_1(){
     console.log(d);
     alert("The sum of all multiples of " + a + " or " + b + " below " + n + " is: " + d);
     document.getElementById('result4_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within " + n + " is: " + d;
-  }
+}
 
-  function sum5_1(){
+function sum5_1(){
     let d=0;
     const a=document.getElementById('a5').value;
     const b=document.getElementById('b5').value;
@@ -75,13 +75,13 @@ function sum4_1(){
     const n = inputString.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
     const newarray = []; //for tracking added numbers
     for (let i=0;i<n.length;i++){
-      if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
-        console.log(n[i]);
-        d+=n[i];
-        newarray.push(n[i]);
+        if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
+            console.log(n[i]);
+            d+=n[i];
+            newarray.push(n[i]);
+            }
         }
-      }
     console.log(d);
     alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
     document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
-  }
+}
