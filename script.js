@@ -48,5 +48,24 @@ function sum4(){
       }
     console.log(d);
     alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
-    document.getElementById('result4').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d;
+    document.getElementById('result4').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
+  }
+
+  function sum4_1(){
+    let d=0;
+    const a=document.getElementById('a4').value;
+    const b=document.getElementById('b4').value;
+    const inputString = document.getElementById('arrayInput').value;
+    const n = inputString.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    const newarray = []; //for tracking added numbers
+    for (let i=0;i<n.length;i++){
+      if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
+        console.log(n[i]);
+        d+=n[i];
+        newarray.push(n[i]);
+        }
+      }
+    console.log(d);
+    alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
+    document.getElementById('result4').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
   }
