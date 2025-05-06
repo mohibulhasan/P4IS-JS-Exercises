@@ -57,8 +57,8 @@ function sum4_1(){
     const b=document.getElementById('b41').value;
     const n = document.getElementById('c4').value;
     for (let i=1;i<n;i++){
-      if ((n[i]%a===0 || n[i]%b===0)){
-        console.log(n[i]);
+      if ((i%a===0 || i%b===0)){
+        console.log(i);
         d+=n[i];
         }
       }
