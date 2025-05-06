@@ -56,7 +56,7 @@ function sum4_1(){
     const a=document.getElementById('a41').value;
     const b=document.getElementById('b41').value;
     const n = document.getElementById('c4').value;
-    for (let i=0;i<n.length;i++){
+    for (let i=0;i<n;i++){
       if ((n[i]%a===0 || n[i]%b===0)){
         console.log(n[i]);
         d+=n[i];
