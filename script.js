@@ -4,9 +4,10 @@ let c = () => {
         alert("Over weight!");
     }
 }
+// For Exercise 2
 let sum = () => {
     let a = 0;
-    let b = document.getElementById('in2').value;
+    let b = 1000;
     for (let i = 1; i < b; i++) {
         if (i % 3 === 0 || i % 5 === 0) {
             a += i;
@@ -17,20 +18,24 @@ let sum = () => {
     document.getElementById('result').textContent = "The sum of multiples of 3 or 5 up to " + b + " is: " + a;
 }
 
-
-function sum3() {
-    let d = 0;
+let abn = () => {
     const a = document.getElementById('an').value;
     const b = document.getElementById('bn').value;
     const n = document.getElementById('in3').value;
+    alert("The sum of all multiples of " + a + " or " + b + " below " + n + " is: " + sum3(a, b, n));
+    document.getElementById('result3').textContent = ("The sum of multiples of " + a + " or " + b + " up to " + n + " is: " + sum3(a, b, n));
+}
+    
+let sum3 = (a,b,n) => {
+    let d = 0;
     for (let i = 1; i < n; i++) {
         if (i % a === 0 || i % b === 0) {
             d += i;
         }
     }
     console.log(d);
-    alert("The sum of all multiples of " + a + " or " + b + " below " + n + " is: " + d);
-    document.getElementById('result3').textContent = ("The sum of multiples of " + a + " or " + b + " up to " + n + " is: " + d);
+    return d;
+
 }
 
 function sum4(){
@@ -51,7 +56,7 @@ function sum4(){
     document.getElementById('result4').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
   }
 
-function sum4_1(){
+function f4(){
     let d=0;
     const a=document.getElementById('a41').value;
     const b=document.getElementById('b41').value;
