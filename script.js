@@ -53,8 +53,8 @@ function sum4(){
 
 function sum4_1(){
     let d=0;
-    const a=document.getElementById('a4').value;
-    const b=document.getElementById('b4').value;
+    const a=document.getElementById('a41').value;
+    const b=document.getElementById('b41').value;
     const n = document.getElementById('c4').value;
     for (let i=0;i<n.length;i++){
       if ((n[i]%a===0 || n[i]%b===0)){
