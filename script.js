@@ -65,7 +65,7 @@ function sum4_1(){
         }
       }
     console.log(d);
-    alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
+    alert("The sum of all multiples of " + a + " or " + b + " below " + n + " is: " + d);
     document.getElementById('result4_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
   }
 
