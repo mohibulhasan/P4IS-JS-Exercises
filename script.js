@@ -59,7 +59,7 @@ function sum4_1(){
     for (let i=1;i<n;i++){
       if ((i%a===0 || i%b===0)){
         console.log(i);
-        d+=n[i];
+        d+=i;
         }
       }
     console.log(d);
