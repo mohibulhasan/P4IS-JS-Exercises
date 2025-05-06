@@ -56,12 +56,10 @@ function sum4_1(){
     const a=document.getElementById('a4').value;
     const b=document.getElementById('b4').value;
     const n = document.getElementById('c4').value;
-    const newarray = []; //for tracking added numbers
     for (let i=0;i<n.length;i++){
-      if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
+      if ((n[i]%a===0 || n[i]%b===0)){
         console.log(n[i]);
         d+=n[i];
-        newarray.push(n[i]);
         }
       }
     console.log(d);
@@ -85,5 +83,5 @@ function sum4_1(){
       }
     console.log(d);
     alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
-    document.getElementById('result4_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
+    document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
   }
