@@ -65,10 +65,10 @@ function f4(a,b,n){
 // For Exercise 5 
 
 let ex5 = () => {
-    const a=document.getElementById('a5').value;
-    const b=document.getElementById('b5').value;
-    const inputString = document.getElementById('arrayInput').value;
-    const n = inputString.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    let inputStringA = document.getElementById('a5').value;
+    let a = inputStringL.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    let inputStringL = document.getElementById('l5').value;
+    let n = inputStringL.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
     let d =f5(a,b,n);
     alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
     document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
