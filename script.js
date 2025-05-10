@@ -66,22 +66,30 @@ function f4(a,b,n){
 
 let ex5 = () => {
     let inputStringA = document.getElementById('a5').value;
-    let a = inputStringL.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    let a = inputStringA.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
     let inputStringL = document.getElementById('l5').value;
     let n = inputStringL.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
-    let d =f5(a,b,n);
-    alert("The sum of all unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d);
-    document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " or " + b + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
+    let d =f5(a,n);
+    alert("The sum of all unique multiples of " + a + " within the array [" + n.join(", ") + "] is: " + d);
+    document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
 }
-function f5(a,b,n){
+function f5(a,n){
     let d=0;
     let newarray = []; //for tracking added numbers
     for (let i=0;i<n.length;i++){
-        if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
+        for(let j=0;j<a.length;j++){
+            if (n[i]%a[j]===0 /* && !newarray.includes(n[i]) */){
+                console.log(n[i]);
+                d+=n[i];
+                //newarray.push(n[i]);
+                break
+            }
+        }
+       /*  if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
             console.log(n[i]);
             d+=n[i];
             newarray.push(n[i]);
-            }
+            } */
         }
     console.log(d);
     return d;    
