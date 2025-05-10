@@ -70,10 +70,47 @@ let ex5 = () => {
     let inputStringL = document.getElementById('l5').value;
     let n = inputStringL.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
     let d =f5(a,n);
-    alert("The sum of all unique multiples of " + a + " within the array [" + n.join(", ") + "] is: " + d);
-    document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
+    console.log(d);
+    if (d === 0) {
+        alert("Please enter a 2 digit array of numbers.");
+    }
+    else {
+        alert("The sum of all unique multiples of " + a + " within the array [" + n.join(", ") + "] is: " + d);
+        document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " within the array [" + n.join(", ") + "] is: " + d + "(without duplicate)";
+    }    
 }
 function f5(a,n){
+    if (a.length > 2 || a.length == 1 || a.some(isNaN)) {
+        return 0; 
+    }
+    else {
+        let d=0;
+        let newarray = []; //for tracking added numbers
+        for (let i=0;i<n.length;i++){
+            for(let j=0;j<a.length;j++){
+                if (n[i]%a[j]===0 && !newarray.includes(n[i])){
+                    console.log(n[i]);
+                    d+=n[i];
+                    newarray.push(n[i]);
+                    break
+                }
+            }
+        }
+        console.log(newarray);
+        //console.log(d);
+        return d;    
+    }
+}
+
+// For Exercise 6
+let ex6 = () => {
+    let inputStringA = document.getElementById('a6').value;
+    let a = inputStringA.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    let inputStringL = document.getElementById('l6').value;
+    let n = inputStringL.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    let d =f6(a,n);
+}
+function f6(a,n){
     let d=0;
     let newarray = []; //for tracking added numbers
     for (let i=0;i<n.length;i++){
@@ -87,12 +124,5 @@ function f5(a,n){
         }
     }
     console.log(d);
-    return d;    
-}
-
-// For Exercise 6
-let ex6 = () => {
-    let inputStringA = document.getElementById('a6').value;
-    let a = inputStringA.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
-    let inputStringL = document.getElementById('l6').value;
-}
+    return d;
+}    
