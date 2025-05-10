@@ -85,12 +85,14 @@ function f5(a,n){
                 break
             }
         }
-       /*  if ((n[i]%a===0 || n[i]%b===0) && !newarray.includes(n[i])){
-            console.log(n[i]);
-            d+=n[i];
-            newarray.push(n[i]);
-            } */
-        }
+    }
     console.log(d);
     return d;    
+}
+
+// For Exercise 6
+let ex6 = () => {
+    let inputStringA = document.getElementById('a6').value;
+    let a = inputStringA.split(",").map(num => Number(num.trim())); // Convert to an array of numbers
+    let inputStringL = document.getElementById('l6').value;
 }
