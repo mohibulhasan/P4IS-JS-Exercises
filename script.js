@@ -79,12 +79,15 @@ let ex5 = () => {
         document.getElementById('result5_1').textContent = "The sum of unique multiples of " + a + " within the array [" + l.join(", ") + "] is: " + d + "(without duplicate)";
     }    
 }
-function f5(a,n){
+function f5(a,l){
     if (a.length > 2 || a.length == 1 || a.some(isNaN)) {
         return 0; 
     }
     else {
-        let d=0;
+        return [...new Set(l.filter(num => a.some(factor => num % factor === 0)))]
+            .reduce((sum, num) => sum + num, 0);
+        }
+        /* let d=0;
         let newarray = []; //for tracking added numbers
         for (let i=0;i<n.length;i++){
             for(let j=0;j<a.length;j++){
@@ -99,7 +102,7 @@ function f5(a,n){
         console.log(newarray);
         //console.log(d);
         return d;    
-    }
+    } */
 }
 
 // For Exercise 6
@@ -114,13 +117,20 @@ let ex6 = () => {
     console.log(d);
 }
 
+function f6(a, l) {    // used function chaining
+    // filter() keeps only the numbers in l that are divisible by at least one factor in a.
+    // reduce() sums up the filtered numbers.
+    // a.some() checks if a number is divisible by at least one factor in a.
+    return l.filter(num => a.some(factor => num % factor === 0)) // a.some() checks if a number is divisible by at least one factor in a.
+            .reduce((sum, num) => sum + num, 0);
+}
 
-function f6(a,n){
+/* function f6(a,n){
     let d=0;
     let newarray = []; //for tracking added numbers
     for (let i=0;i<n.length;i++){
         for(let j=0;j<a.length;j++){
-            if (n[i]%a[j]===0 /* && !newarray.includes(n[i]) */
+            if (n[i]%a[j]===0 && !newarray.includes(n[i])
             ){
                 console.log(n[i]);
                 d+=n[i];
@@ -131,5 +141,5 @@ function f6(a,n){
     }
     console.log(d);
     return d;
-}    
+}   */  
 
