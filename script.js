@@ -125,21 +125,21 @@ function f6(a, l) {    // used function chaining
             .reduce((sum, num) => sum + num, 0);
 }
 
-/* function f6(a,n){
-    let d=0;
-    let newarray = []; //for tracking added numbers
-    for (let i=0;i<n.length;i++){
-        for(let j=0;j<a.length;j++){
-            if (n[i]%a[j]===0 && !newarray.includes(n[i])
-            ){
-                console.log(n[i]);
-                d+=n[i];
-                //newarray.push(n[i]);
-                break
-            }
+// For Exercise 7
+let ex7 = () => {
+    let basket = {"eggs": 6, "milk": 2, "bread": 5, "butter": 1, "cheese": 2};
+    let price = {"eggs": 0.5, "milk": 1.2, "bread": 1.5, "butter": 2.0, "cheese": 3.0};
+    let result = f7(basket, price);
+    alert("The total cost of the basket is: " + result);
+}
+
+function f7(basket, price) {
+    let total = 0;
+    for (let item in basket) {
+        if (basket[item] > 0) {
+            total += basket[item] * price[item];
         }
     }
-    console.log(d);
-    return d;
-}   */  
+    return total;
+}
 
