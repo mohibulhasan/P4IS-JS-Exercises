@@ -131,6 +131,8 @@ let ex7 = () => {
     let price = {"eggs": 0.5, "milk": 1.2, "bread": 1.5, "butter": 2.0, "cheese": 3.0};
     let result = f7(basket, price);
     alert("The total cost of the basket is: " + result);
+    console.log("The total cost of the basket is: " + result);
+    document.getElementById('result7_1').textContent = "The total cost of the basket is: " + result;
 }
 
 function f7(basket, price) {
