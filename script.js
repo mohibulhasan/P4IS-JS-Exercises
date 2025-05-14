@@ -136,10 +136,20 @@ let addItem = () => {
     if (item && quantity && price) {
         basket[item] = basket[item] || 0 + parseInt(quantity);
         prices[item] = price;
-        alert("Item added to basket.");
-        document.getElementById('cart').textContent = "Item: " + item + ", Quantity: " + quantity + ", Price: " + price;
+        //alert("Item added to basket.");
+        cartFunction();
+       // document.getElementById('cart').textContent = "Item: " + item + ", Quantity: " + quantity + ", Price: " + price;
     } else {
         alert("Please fill in all fields.");
+    }
+}
+let cartFunction = () => {
+    let cart = document.getElementById('cart');
+    cart.innerHTML = ""; // Clear previous items
+    for (let item in basket) {
+        if (basket[item] > 0) {
+            cart.innerHTML += "Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "<br>";
+        }
     }
 }
 
