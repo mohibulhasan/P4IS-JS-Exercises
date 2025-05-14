@@ -151,11 +151,12 @@ let cartFunction = () => {
             cart.innerHTML += "Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "<br>";
         }
     }
+    console.log(cart);
 }
 
-let ex7 = () => {
+/* let ex7 = () => {
     /* let basket = {"eggs": 6, "milk": 2, "bread": 5, "butter": 1, "cheese": 2};
-    let price = {"eggs": 0.5, "milk": 1.2, "bread": 1.5, "butter": 2.0, "cheese": 3.0}; */
+    let price = {"eggs": 0.5, "milk": 1.2, "bread": 1.5, "butter": 2.0, "cheese": 3.0};
     let basket = addItem.quantity;
     let price = addItem.price;
     //let quantity = addItem.quantity;
@@ -164,15 +165,16 @@ let ex7 = () => {
 
     console.log("The total cost of the basket is: " + result);
     document.getElementById('result7_1').textContent = "The total cost of the basket is: " + result;
-}
+} */
 
-let f7 = (basket, price) => {
+let ex7 = () => {
     let total = 0;
     for (let item in basket) {
         if (basket[item] > 0) {
             total += basket[item] * price[item];
         }
     }
-    return total;
+    console.log(total);
+    document.getElementById('result7_1').textContent = "The total cost of the basket is: " + total;
 }
 
