@@ -134,8 +134,8 @@ let addItem = () => {
     let price = document.getElementById('price').value;
 
     if (item && quantity && price) {
-        basket[item] = basket[item] || 0 + parseInt(quantity);
-        prices[item] = price;
+        basket[item] = (basket[item] || 0) + parseInt(quantity);
+        prices[item] = parseFloat(price);
         //alert("Item added to basket.");
         cartFunction();
        // document.getElementById('cart').textContent = "Item: " + item + ", Quantity: " + quantity + ", Price: " + price;
@@ -171,10 +171,11 @@ let ex7 = () => {
     let total = 0;
     for (let item in basket) {
         if (basket[item] > 0) {
-            total += basket[item] * price[item];
+            total += basket[item] * prices[item];
         }
     }
-    console.log(total);
-    document.getElementById('result7_1').textContent = "The total cost of the basket is: " + total;
+    console.log(basket);
+    console.log(prices);
+    document.getElementById('result7_1').textContent = "The total cost of the basket is: " + total.toFixed(2);
 }
 
