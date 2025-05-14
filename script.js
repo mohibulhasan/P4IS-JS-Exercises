@@ -126,11 +126,32 @@ function f6(a, l) {    // used function chaining
 }
 
 // For Exercise 7
+let basket = {}; // Stores product: quantity pairs
+let prices = {}; // Stores product: price pairs
+let addItem = () => {
+    let item = document.getElementById('item').value;
+    let quantity = document.getElementById('quantity').value;
+    let price = document.getElementById('price').value;
+
+    if (item && quantity && price) {
+        basket[item] = basket[item] || 0 + parseInt(quantity);
+        prices[item] = price;
+        alert("Item added to basket.");
+        document.getElementById('cart').textContent = "Item: " + item + ", Quantity: " + quantity + ", Price: " + price;
+    } else {
+        alert("Please fill in all fields.");
+    }
+}
+
 let ex7 = () => {
-    let basket = {"eggs": 6, "milk": 2, "bread": 5, "butter": 1, "cheese": 2};
-    let price = {"eggs": 0.5, "milk": 1.2, "bread": 1.5, "butter": 2.0, "cheese": 3.0};
+    /* let basket = {"eggs": 6, "milk": 2, "bread": 5, "butter": 1, "cheese": 2};
+    let price = {"eggs": 0.5, "milk": 1.2, "bread": 1.5, "butter": 2.0, "cheese": 3.0}; */
+    let basket = addItem.quantity;
+    let price = addItem.price;
+    //let quantity = addItem.quantity;
     let result = f7(basket, price);
     //alert("The total cost of the basket is: " + result);
+
     console.log("The total cost of the basket is: " + result);
     document.getElementById('result7_1').textContent = "The total cost of the basket is: " + result;
 }
