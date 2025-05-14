@@ -135,7 +135,7 @@ let ex7 = () => {
     document.getElementById('result7_1').textContent = "The total cost of the basket is: " + result;
 }
 
-function f7(basket, price) {
+let f7 = (basket, price) => {
     let total = 0;
     for (let item in basket) {
         if (basket[item] > 0) {
