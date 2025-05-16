@@ -149,7 +149,7 @@ let cartFunction = () => {
     cart.innerHTML = ""; // Clear previous items
     for (let item in basket) {
         if (basket[item] > 0) { 
-            cart.innerHTML += "Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "<br>"; 
+            cart.innerHTML += "<ul><li> Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "</li></ul>"; 
         }
     }
     console.log(basket);
