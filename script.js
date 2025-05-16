@@ -151,7 +151,7 @@ let cartFunction = () => {
             cart.innerHTML += "Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "<br>";
         }
     }
-    console.log(cart);
+    console.log(basket);
 }
 
 /* let ex7 = () => {
@@ -174,8 +174,7 @@ let ex7 = () => {
             total += basket[item] * prices[item];
         }
     }
-    console.log(basket);
-    console.log(prices);
+    //console.log(basket);
+    //console.log(prices);
     document.getElementById('result7_1').textContent = "The total cost of the basket is: " + total.toFixed(2);
 }
-
