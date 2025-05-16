@@ -129,26 +129,27 @@ function f6(a, l) {    // used function chaining
 let basket = {}; // Stores product: quantity pairs
 let prices = {}; // Stores product: price pairs
 let addItem = () => {
-    let item = document.getElementById('item').value;
-    let quantity = document.getElementById('quantity').value;
+    let item = document.getElementById('item').value; 
+    let quantity = document.getElementById('quantity').value; 
     let price = document.getElementById('price').value;
 
     if (item && quantity && price) {
-        basket[item] = (basket[item] || 0) + parseInt(quantity);
-        prices[item] = parseFloat(price);
+        basket[item] = (basket[item] || 0) + parseInt(quantity); // Update quantity
+        prices[item] = parseFloat(price); // store price
         //alert("Item added to basket.");
         cartFunction();
        // document.getElementById('cart').textContent = "Item: " + item + ", Quantity: " + quantity + ", Price: " + price;
     } else {
         alert("Please fill in all fields.");
     }
+    console.log(prices);
 }
 let cartFunction = () => {
-    let cart = document.getElementById('cart');
+    let cart = document.getElementById('cart'); 
     cart.innerHTML = ""; // Clear previous items
     for (let item in basket) {
-        if (basket[item] > 0) {
-            cart.innerHTML += "Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "<br>";
+        if (basket[item] > 0) { 
+            cart.innerHTML += "Item: " + item + ", Quantity: " + basket[item] + ", Price: " + prices[item] + "<br>"; 
         }
     }
     console.log(basket);
@@ -171,7 +172,7 @@ let ex7 = () => {
     let total = 0;
     for (let item in basket) {
         if (basket[item] > 0) {
-            total += basket[item] * prices[item];
+            total += basket[item] * prices[item]; // this calculates the total cost of each item
         }
     }
     //console.log(basket);
